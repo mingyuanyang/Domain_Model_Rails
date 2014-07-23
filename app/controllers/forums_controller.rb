@@ -1,7 +1,10 @@
 class ForumsController < ApplicationController
-   require 'domain/profile'
-  require 'domain/forum'
-  require 'domain/commentf'
+  require 'domain/repositories/profilerepository'
+  require 'domain/entities/profile'  
+  require 'domain/repositories/forumrepository'
+  require 'domain/entities/forum'
+  require 'domain/repositories/commentfrepository'
+  require 'domain/entities/commentf'  
   before_filter :authenticate_user!, :except => [:index, :show]
   # GET /forums
   # GET /forums.json

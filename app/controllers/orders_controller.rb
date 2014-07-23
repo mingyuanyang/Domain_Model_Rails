@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
-  require 'domain/order'
-  require 'domain/orderitem'
+  require 'domain/repositories/orderrepository'
+  require 'domain/entities/order'
+  require 'domain/repositories/orderitemrepository'
+  require 'domain/entities/orderitem'
   before_filter :authenticate_user!
   before_filter :ensure_staff, :except => [:new, :create, :show]
   before_filter :ensure_customer, :only => [:new, :create]

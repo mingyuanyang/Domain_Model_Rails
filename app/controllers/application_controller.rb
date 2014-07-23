@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  require 'domain/item'
+  require 'domain/repositories/itemrepository' 
+  require 'domain/entities/item' 
   protect_from_forgery
 
   def ensure_customer

@@ -1,9 +1,14 @@
 class ProfilesController < ApplicationController
-  require 'domain/forum'
-  require 'domain/commentf'
-  require 'domain/post'
-  require 'domain/profile'
-  require 'domain/order'
+  require 'domain/repositories/forumrepository'
+  require 'domain/entities/forum'
+  require 'domain/repositories/commentfrepository'
+  require 'domain/entities/commentf'  
+  require 'domain/repositories/postrepository'
+  require 'domain/entities/post'
+  require 'domain/repositories/profilerepository'
+  require 'domain/entities/profile'  
+  require 'domain/repositories/orderrepository'
+  require 'domain/entities/order'
   before_filter :authenticate_user!
 
   # GET /profiles

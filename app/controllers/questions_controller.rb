@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
-  require 'domain/question'
+  require 'domain/repositories/questionrepository'
+  require 'domain/entities/question'
   before_filter :authenticate_user!, :except  => [:new, :create]
   before_filter :ensure_staff, :except => [:new, :create]
   # GET /questions

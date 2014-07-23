@@ -1,5 +1,6 @@
 Mobilestore::Application.routes.draw do
-  require 'domain/user'
+  require 'domain/repositories/userrepository'
+  require 'domain/entities/user'  
   get "faq/answer1"
 
   get "faq/answer2"

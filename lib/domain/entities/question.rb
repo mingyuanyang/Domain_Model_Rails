@@ -1,0 +1,3 @@
+class Question < QuestionRepository
+
+end

@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
-  require 'domain/post'
-  require 'domain/commentp'
+  require 'domain/repositories/postrepository'
+  require 'domain/entities/post'
+  require 'domain/repositories/commentprepository'
+  require 'domain/entities/commentp'
+  require 'domain/repositories/profilerepository'
+  require 'domain/entities/profile'
   before_filter :authenticate_user!, :except => [:index, :show]
   # GET /posts
   # GET /posts.json
