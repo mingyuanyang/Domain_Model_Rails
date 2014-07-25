@@ -53,9 +53,9 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.new(params[:order])
 
-#    @p1 = Collectorders.new("allorders.txt")
+    @p1 = Collectorders.new("public/allorders.txt")
     total=0
-#    @p1.addorder(params[:order][:receiver_name],params[:order][:receiver_address],params[:order][:receiver_mobile],DateTime.now)
+    @p1.addorder(params[:order][:receiver_name],params[:order][:receiver_address],params[:order][:receiver_mobile],DateTime.now)
 
     @cart = session[:cart] || {}
     @cart.each do |id, quantity|
@@ -63,10 +63,10 @@ class OrdersController < ApplicationController
       @orderitem = @order.orderitems.build(:item_id => item.id, :title => item.title, :description => item.description, :quantity => quantity, :price => Filteranddiscount.rundiscount(item.discount,item.price))
       @orderitem.save
       total += quantity * Filteranddiscount.rundiscount(item.discount,item.price)
-#      @p1.addorderitems(item.title,Filteranddiscount.rundiscount(item.discount,item.price),quantity,quantity*Filteranddiscount.rundiscount(item.discount,item.price))
+      @p1.addorderitems(item.title,Filteranddiscount.rundiscount(item.discount,item.price),quantity,quantity*Filteranddiscount.rundiscount(item.discount,item.price))
     end
-#      @p1.totalprice(total)
-#      @p1.blankline
+      @p1.totalprice(total)
+      @p1.blankline
     respond_to do |format|
       if @order.save
         @cart.clear

@@ -6,3 +6,25 @@ class Order < OrderRepository
   validates :receiver_mobile, presence: true,
             length: { maximum: 10 }
 end
+
+class Collectorders < Order
+  attr_accessor :handle
+  def initialize (filename)
+    @handle = File.open(filename, 'a')
+  end
+  def addorder (name, address, mobile, date)
+    neworder = "#{name},#{address},#{mobile},#{date}"
+    @handle.puts(neworder)
+  end
+  def addorderitems (itemtitle,price,quantity,totalprice)
+    neworderitem = "#{itemtitle},#{price},#{quantity},#{totalprice}"
+    @handle.puts (neworderitem)
+  end
+  def totalprice(totalprice)
+    newtotal = "#{totalprice}"
+    @handle.puts (newtotal)
+  end
+  def blankline
+    @handle.write("\n")
+  end
+end
