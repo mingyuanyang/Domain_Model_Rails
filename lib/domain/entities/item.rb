@@ -7,13 +7,6 @@ class Item < ItemRepository
       with:    %r{\.(gif|jpg|png)\Z}i,
       message: 'must be a URL for GIF, JPG or PNG image.'
   }
-  def self.search(search_query)
-    if search_query
-      find(:all,:conditions => ['title LIKE ?', "%#{
-      search_query}%"])
-    else
-      find(:all)
-    end
-  end
+
 end
 
