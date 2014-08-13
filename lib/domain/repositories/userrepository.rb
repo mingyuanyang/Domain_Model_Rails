@@ -10,3 +10,5 @@ class UserRepository < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   self.abstract_class = true
 end
+class User < UserRepository
+end

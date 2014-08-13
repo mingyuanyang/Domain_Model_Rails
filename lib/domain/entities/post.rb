@@ -1,4 +1,4 @@
-class Post < PostRepository
+class Post
   has_many :commentps, dependent: :destroy
   belongs_to :user
   validates :title, presence: true,

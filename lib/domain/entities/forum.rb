@@ -1,4 +1,4 @@
-class Forum < ForumRepository
+class Forum
   has_many :commentfs, dependent: :destroy
   belongs_to :user
   validates :title, presence: true,

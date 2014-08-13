@@ -1,4 +1,4 @@
-class Item < ItemRepository
+class Item
   DISCOUNT = [ "10% off", "20% off", "30% off", "40% off", "half price", "full price" ]
   validates :title, :description, :image_url, :brand, :category, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}

@@ -3,3 +3,5 @@ class CommentpRepository < ActiveRecord::Base
   attr_accessible :body
   self.abstract_class = true
 end
+class Commentp < CommentpRepository
+end

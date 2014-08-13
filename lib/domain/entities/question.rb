@@ -1,3 +1,3 @@
-class Question < QuestionRepository
+class Question
 
 end

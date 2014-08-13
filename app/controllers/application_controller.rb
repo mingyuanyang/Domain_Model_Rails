@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   require 'domain/repositories/itemrepository' 
-  require 'domain/entities/item' 
+#  require 'domain/entities/item' 
   protect_from_forgery
 
   def ensure_customer
@@ -30,6 +30,8 @@ class ApplicationController < ActionController::Base
 <h1>Only admin can operate this function.</h1><br/>
 <p><a href='/index'>Back to Home Page</a></p>
 <br/><br/></center>", :status => :unauthorized
+    else 
+	  require 'domain/entities/item' 
     end
   end
 

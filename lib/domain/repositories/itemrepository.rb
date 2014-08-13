@@ -11,3 +11,5 @@ self.abstract_class = true
     end
   end
 end
+class Item < ItemRepository
+end

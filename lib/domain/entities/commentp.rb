@@ -1,4 +1,4 @@
-class Commentp < CommentpRepository
+class Commentp
   belongs_to :post
   validates :body, presence: true,
   length: { minimum: 10 }

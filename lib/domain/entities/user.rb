@@ -1,4 +1,4 @@
-class User < UserRepository
+class User
   has_many :profiles
   has_many :posts
   has_many :forums

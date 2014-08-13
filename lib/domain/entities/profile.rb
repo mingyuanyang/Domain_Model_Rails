@@ -1,4 +1,4 @@
-class Profile < ProfileRepository
+class Profile
   belongs_to :user
   validates :user_id, uniqueness: true
   validates :firstname, :lastname, :address, presence: true

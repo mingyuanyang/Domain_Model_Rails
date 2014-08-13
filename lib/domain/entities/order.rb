@@ -1,4 +1,4 @@
-class Order < OrderRepository
+class Order
   belongs_to :user
   has_many :orderitems, dependent: :destroy
   validates :receiver_name, :receiver_address, presence: true

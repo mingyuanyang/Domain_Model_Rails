@@ -1,4 +1,4 @@
-class Commentf < CommentfRepository
+class Commentf
   belongs_to :forum
   belongs_to :user
   validates :body, presence: true,

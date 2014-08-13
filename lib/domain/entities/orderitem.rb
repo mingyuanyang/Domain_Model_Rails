@@ -1,3 +1,3 @@
-class Orderitem < OrderitemRepository
+class Orderitem
   belongs_to :order
 end
